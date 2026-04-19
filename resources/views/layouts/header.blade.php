@@ -73,7 +73,7 @@
 {{-- Toast Container --}}
 <div class="toast-container position-fixed top-0 end-0 p-3" style="z-index: 9999">
     @if(session('success'))
-        <div class="toast align-items-center border-0 text-white bg-success" role="alert" data-bs-delay="4000" data-bs-autohide="true">
+        <div class="toast align-items-center border-0 text-white bg-success fade" role="alert" data-bs-delay="2500" data-bs-autohide="true">
             <div class="d-flex">
                 <div class="toast-body">
                     <i class="fas fa-check-circle me-2"></i>
@@ -84,7 +84,7 @@
         </div>
     @endif
     @if(session('newsletter_success'))
-        <div class="toast align-items-center border-0 text-white bg-success" role="alert" data-bs-delay="4000" data-bs-autohide="true">
+        <div class="toast align-items-center border-0 text-white bg-success fade" role="alert" data-bs-delay="2500" data-bs-autohide="true">
             <div class="d-flex">
                 <div class="toast-body">
                     <i class="fas fa-check-circle me-2"></i>
@@ -95,7 +95,7 @@
         </div>
     @endif
     @if(session('error'))
-        <div class="toast align-items-center border-0 text-white bg-danger" role="alert" data-bs-delay="5000" data-bs-autohide="true">
+        <div class="toast align-items-center border-0 text-white bg-danger fade" role="alert" data-bs-delay="2500" data-bs-autohide="true">
             <div class="d-flex">
                 <div class="toast-body">
                     <i class="fas fa-times-circle me-2"></i>
@@ -106,7 +106,7 @@
         </div>
     @endif
     @if(session('info'))
-        <div class="toast align-items-center border-0 text-white bg-primary" role="alert" data-bs-delay="4000" data-bs-autohide="true">
+        <div class="toast align-items-center border-0 text-white bg-primary fade" role="alert" data-bs-delay="2500" data-bs-autohide="true">
             <div class="d-flex">
                 <div class="toast-body">
                     <i class="fas fa-info-circle me-2"></i>
@@ -127,3 +127,16 @@
         });
     });
 </script>
+
+<style>
+.toast {
+    min-width: 260px;
+    border-radius: .75rem;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+    opacity: .95;
+}
+.toast-body {
+    font-weight: 500;
+    font-size: .9rem;
+}
+</style>
