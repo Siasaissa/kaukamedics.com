@@ -25,7 +25,7 @@
     <meta name="twitter:image" content="https://kaukamedics.com/img/preview.jpg">
 
     <!-- Favicon -->
-    <link rel="icon" href="img/favicon.ico">
+    <link rel="icon" type="image/png" href="{{ asset('assets/img/favicon.png') }}">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

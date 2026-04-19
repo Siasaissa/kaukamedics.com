@@ -4,11 +4,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Medical Supplies Dashboard</title>
     
-    <link rel="icon" type="image/png" href="{{url('img/favicon-96x96.png')}}" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="{{url('img/favicon.svg')}}" />
-    <link rel="shortcut icon" href="{{url('img/favicon.ico')}}" />
-    <link rel="apple-touch-icon" sizes="180x180" href="{{url('img/apple-touch-icon.png')}}" />
-    <link rel="manifest" href="{{url('img/site.webmanifest')}}" />
+    <link rel="icon" type="image/png" href="{{ asset('assets/img/favicon.png') }}">
+    <!-- Removed unused SVG favicon -->
+    <!-- Removed unused ICO favicon -->
+    <!-- Apple touch icon retained if needed -->
+    <!-- Manifest removed -->
     
     <!-- Google Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700,900" />
