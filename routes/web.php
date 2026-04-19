@@ -41,6 +41,9 @@ Route::post('/newsletter/subscribe', [ContactController::class, 'subscribeNewsle
 
 
 Route::get('/products', [ProductController::class, 'index'])->name('products');
+Route::get('/products/{id}', [ProductController::class, 'show'])->name('products.show');
+Route::get('/wishlist/add/{id}', [ProductController::class, 'addToWishlist'])->name('wishlist.add');
+Route::get('/wishlist/remove/{id}', [ProductController::class, 'removeFromWishlist'])->name('wishlist.remove');
 Route::get('/cart', [ProductController::class, 'cart'])->name('cart');
 Route::get('/cart/add/{id}', [ProductController::class, 'addToCart'])->name('add.to.cart');
 Route::get('/cart/remove/{id}', [ProductController::class, 'removeFromCart'])->name('remove.from.cart');
