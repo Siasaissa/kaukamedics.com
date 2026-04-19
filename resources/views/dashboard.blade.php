@@ -274,18 +274,17 @@
     var maxSalesValue = salesValues.length ? Math.max(...salesValues) : 0;
 
     new Chart(ctx, {
-      type: "bar",
+      type: "line",
       data: {
         labels: salesMonths,
         datasets: [{
           label: "Sales (Tsh)",
           tension: 0.4,
-          borderWidth: 0,
-          borderRadius: 4,
-          borderSkipped: false,
-          backgroundColor: "#43A047",
+          borderColor: "#43A047",
+          backgroundColor: "rgba(67,160,71,0.2)",
+          fill: true,
+          pointRadius: 5,
           data: salesValues,
-          barThickness: 'flex'
         }, ],
       },
       options: {

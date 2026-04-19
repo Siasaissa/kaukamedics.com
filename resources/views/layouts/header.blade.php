@@ -69,3 +69,61 @@
             </div>
         </div>
     </header>
+
+{{-- Toast Container --}}
+<div class="toast-container position-fixed top-0 end-0 p-3" style="z-index: 9999">
+    @if(session('success'))
+        <div class="toast align-items-center border-0 text-white bg-success" role="alert" data-bs-delay="4000" data-bs-autohide="true">
+            <div class="d-flex">
+                <div class="toast-body">
+                    <i class="fas fa-check-circle me-2"></i>
+                    {{ session('success') }}
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+            </div>
+        </div>
+    @endif
+    @if(session('newsletter_success'))
+        <div class="toast align-items-center border-0 text-white bg-success" role="alert" data-bs-delay="4000" data-bs-autohide="true">
+            <div class="d-flex">
+                <div class="toast-body">
+                    <i class="fas fa-check-circle me-2"></i>
+                    {{ session('newsletter_success') }}
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+            </div>
+        </div>
+    @endif
+    @if(session('error'))
+        <div class="toast align-items-center border-0 text-white bg-danger" role="alert" data-bs-delay="5000" data-bs-autohide="true">
+            <div class="d-flex">
+                <div class="toast-body">
+                    <i class="fas fa-times-circle me-2"></i>
+                    {{ session('error') }}
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+            </div>
+        </div>
+    @endif
+    @if(session('info'))
+        <div class="toast align-items-center border-0 text-white bg-primary" role="alert" data-bs-delay="4000" data-bs-autohide="true">
+            <div class="d-flex">
+                <div class="toast-body">
+                    <i class="fas fa-info-circle me-2"></i>
+                    {{ session('info') }}
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+            </div>
+        </div>
+    @endif
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var toastElList = [].slice.call(document.querySelectorAll('.toast'));
+        toastElList.forEach(function (toastEl) {
+            var toast = new bootstrap.Toast(toastEl);
+            toast.show();
+        });
+    });
+</script>
