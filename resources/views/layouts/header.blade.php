@@ -139,4 +139,31 @@
     font-weight: 500;
     font-size: .9rem;
 }
+@media (max-width: 576px) {
+  .header_area .navbar-brand img {
+    height: 60px !important;
+  }
+  .header_area .nav-item {
+    width: 100%;
+    text-align: center;
+    margin: .5rem 0;
+  }
+  .header_area .menu_nav {
+    flex-direction: column;
+    align-items: center;
+  }
+  .search_input {
+    padding: .5rem;
+  }
+  .search_input .form-control {
+    width: 100%;
+  }
+  .toast-container {
+    right: 0;
+    left: 0;
+    top: 0;
+    padding: .5rem;
+    max-width: 100%;
+  }
+}
 </style>

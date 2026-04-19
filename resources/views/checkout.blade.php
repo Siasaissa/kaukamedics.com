@@ -28,6 +28,25 @@
     <link rel="stylesheet" href="css/nouislider.min.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/main.css">
+<style>
+@media (max-width: 576px) {
+  .checkout_area .order_box,
+  .checkout_area .billing_details {
+    padding: 1rem;
+  }
+  .checkout_area .payment-details {
+    margin-top: 1rem;
+  }
+  .checkout_area .primary-btn {
+    width: 100%;
+    padding: .75rem;
+    font-size: 1rem;
+  }
+  .checkout_area .form-group {
+    margin-bottom: .75rem;
+  }
+}
+</style>
 </head>
 
 <body>
