@@ -364,20 +364,6 @@
                 </div>
                 <div class="col-lg-3 col-md-6 mb-4">
                     <div class="card text-center border-0 shadow">
-                        <img class="card-img-top rounded-circle mx-auto mt-4" src="img/team-2.jpeg" alt="Team Member" style="width:150px; height:150px; object-fit:cover;">
-                        <div class="card-body">
-                            <h5 class="card-title">Patrick Mbise</h5>
-                            <p class="card-text text-muted">Operation Manager</p>
-                            <div class="d-flex justify-content-center">
-                                <a href="#" class="btn btn-sm btn-outline-primary mx-1"><i class="fa fa-facebook"></i></a>
-                                <a href="#" class="btn btn-sm btn-outline-info mx-1"><i class="fa fa-linkedin"></i></a>
-                                <a href="#" class="btn btn-sm btn-outline-secondary mx-1"><i class="fa fa-envelope"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="card text-center border-0 shadow">
                         <img class="card-img-top rounded-circle mx-auto mt-4" src="img/team-1.jpeg" alt="Team Member" style="width:150px; height:150px; object-fit:cover;">
                         <div class="card-body">
                             <h5 class="card-title">Fadhili Mwankenja</h5>
