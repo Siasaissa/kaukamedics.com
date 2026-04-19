@@ -165,7 +165,35 @@
                                     </label>
                                 </div>
                                 @error('payment_method')<small class="text-danger d-block">{{ $message }}</small>@enderror
-                                <p class="text-muted mt-2 mb-0">Selecting a method will show payment instructions before you confirm the order.</p>
+                                @php
+    $method = session('payment_method');
+    $orderTotal = $total + 2000;
+@endphp
+@if (session('show_instructions') && $method)
+    <div class="payment-details mt-3 p-3 border rounded bg-light">
+        @if ($method === 'M-Pesa')
+            <p>To complete your payment via <strong>M-Pesa</strong>:</p>
+            <ol>
+                <li>Dial <code>*150*00#</code></li>
+                <li>Select <strong>Pay by M-Pesa</strong></li>
+                <li>Lipa Namba: <strong>5066500</strong></li>
+                <li>Enter Amount: Tsh {{ number_format($orderTotal, 2) }}</li>
+            </ol>
+        @elseif ($method === 'CRDB BANK')
+            <p>To complete your payment via <strong>CRDB BANK</strong>:</p>
+            <ol>
+                <li>Account Number: <strong>015C000T5WU00</strong></li>
+                <li>Enter Amount: Tsh {{ number_format($orderTotal, 2) }}</li>
+            </ol>
+        @else
+            <p>To complete your payment via <strong>NMB BANK</strong>:</p>
+            <ol>
+                <li>Account Number: <strong>25110033313</strong></li>
+                <li>Enter Amount: Tsh {{ number_format($orderTotal, 2) }}</li>
+            </ol>
+        @endif
+    </div>
+@endif
                             </div>
                             
                         </div>
@@ -180,7 +208,7 @@
     @include('layouts.footer')
     <!-- End footer Area -->
 
-    <div class="modal fade" id="paymentInstructionModal" tabindex="-1" role="dialog" aria-labelledby="paymentInstructionModalLabel" aria-hidden="true">
+    {{--
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -216,7 +244,7 @@
     <script src="js/gmaps.min.js"></script>
     <script src="js/main.js"></script>
 
-    <script>
+    {{--
     const paymentInstructions = {
         'M-Pesa': `
             <p class="mb-2">Use M-Pesa to complete your payment quickly from your phone.</p>
@@ -267,7 +295,7 @@
             showPaymentInstructions(@json(session('payment_method')));
         @endif
     });
-    </script>
+--}}
 </body>
 
 </html>
