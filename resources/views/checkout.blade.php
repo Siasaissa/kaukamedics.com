@@ -221,9 +221,10 @@
         'M-Pesa': `
             <p class="mb-2">Use M-Pesa to complete your payment quickly from your phone.</p>
             <ol class="pl-3 mb-0">
-                <li>Open your M-Pesa menu on your phone.</li>
+                <li>Open your M-Pesa menu on your phone. *150*00#</li>
                 <li>Select <strong>Lipa kwa Simu</strong> or merchant payment.</li>
-                <li>Use business number <strong>000000</strong>.</li>
+                <li>Use business number <strong>5066500</strong>.</li>
+                <li>Enter the amount to pay Tsh <strong>{{ number_format($total, 2) }}</strong>.</li>
                 <li>Enter your order phone number as reference.</li>
                 <li>Complete the payment and keep the confirmation message.</li>
             </ol>
@@ -233,7 +234,7 @@
             <ul class="list-unstyled mb-0">
                 <li><strong>Bank:</strong> CRDB BANK</li>
                 <li><strong>Account Name:</strong> Kauka Medical Supplies</li>
-                <li><strong>Account Number:</strong> 012345678900</li>
+                <li><strong>Account Number:</strong>015C000T5WU00</li>
                 <li><strong>Reference:</strong> Use your full name or phone number</li>
             </ul>
         `,
@@ -242,7 +243,7 @@
             <ul class="list-unstyled mb-0">
                 <li><strong>Bank:</strong> NMB BANK</li>
                 <li><strong>Account Name:</strong> Kauka Medical Supplies</li>
-                <li><strong>Account Number:</strong> 987654321000</li>
+                <li><strong>Account Number:</strong> 25110033313</li>
                 <li><strong>Reference:</strong> Use your full name or phone number</li>
             </ul>
         `
