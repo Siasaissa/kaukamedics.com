@@ -235,6 +235,7 @@
                 <li><strong>Bank:</strong> CRDB BANK</li>
                 <li><strong>Account Name:</strong> Kauka Medical Supplies</li>
                 <li><strong>Account Number:</strong>015C000T5WU00</li>
+                <li>Enter the amount to pay Tsh <strong>{{ number_format($total, 2) }}</strong>.</li>
                 <li><strong>Reference:</strong> Use your full name or phone number</li>
             </ul>
         `,
@@ -244,6 +245,7 @@
                 <li><strong>Bank:</strong> NMB BANK</li>
                 <li><strong>Account Name:</strong> Kauka Medical Supplies</li>
                 <li><strong>Account Number:</strong> 25110033313</li>
+                <li>Enter the amount to pay Tsh <strong>{{ number_format($total, 2) }}</strong>.</li>
                 <li><strong>Reference:</strong> Use your full name or phone number</li>
             </ul>
         `
