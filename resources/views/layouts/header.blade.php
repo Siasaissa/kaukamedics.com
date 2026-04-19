@@ -69,148 +69,46 @@
             </div>
         </div>
     </header>
+<!-- Notification Area -->
+@if (session('success') || session('error'))
+    <div id="alert-message"
+        class="position-fixed top-0 end-0 mt-4 me-4 px-4 py-3 rounded-3 shadow-lg fade show"
+        style="
+            min-width: 320px;
+            background-color: rgba({{ session('success') ? '40,167,69' : '220,53,69' }}, 0.9);
+            color: #fff;
+            backdrop-filter: blur(6px);
+            z-index: 2000;
+            transform: translateX(150%);
+            transition: transform 0.5s ease, opacity 0.6s ease;
+            opacity: 0;
+        ">
+        <div class="d-flex align-items-center">
+            <i class="fa {{ session('success') ? 'fa-check-circle' : 'fa-exclamation-triangle' }} me-2 fs-5"></i>
+            <div>
+                <strong>{{ session('success') ? 'Success:' : 'Error:' }}</strong>
+                <span>{{ session('success') ?? session('error') }}</span>
+            </div>
+        </div>
+    </div>
 
-{{-- Toast Container --}}
-<div class="toast-container position-fixed top-0 end-0 p-3" style="z-index: 9999">
-    @if(session('success'))
-        <div class="toast align-items-center border-0 text-white bg-success fade" role="alert" data-bs-delay="2500" data-bs-autohide="true">
-            <div class="d-flex">
-                <div class="toast-body">
-                    <i class="fas fa-check-circle me-2"></i>
-                    {{ session('success') }}
-                </div>
-                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
-            </div>
-        </div>
-    @endif
-    @if(session('newsletter_success'))
-        <div class="toast align-items-center border-0 text-white bg-success fade" role="alert" data-bs-delay="2500" data-bs-autohide="true">
-            <div class="d-flex">
-                <div class="toast-body">
-                    <i class="fas fa-check-circle me-2"></i>
-                    {{ session('newsletter_success') }}
-                </div>
-                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
-            </div>
-        </div>
-    @endif
-    @if(session('error'))
-        <div class="toast align-items-center border-0 text-white bg-danger fade" role="alert" data-bs-delay="2500" data-bs-autohide="true">
-            <div class="d-flex">
-                <div class="toast-body">
-                    <i class="fas fa-times-circle me-2"></i>
-                    {{ session('error') }}
-                </div>
-                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
-            </div>
-        </div>
-    @endif
-    @if(session('info'))
-        <div class="toast align-items-center border-0 text-white bg-primary fade" role="alert" data-bs-delay="2500" data-bs-autohide="true">
-            <div class="d-flex">
-                <div class="toast-body">
-                    <i class="fas fa-info-circle me-2"></i>
-                    {{ session('info') }}
-                </div>
-                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
-            </div>
-        </div>
-    @endif
-</div>
+    <script>
+        // Animate toast entrance and fade-out
+        document.addEventListener("DOMContentLoaded", () => {
+            const alert = document.getElementById('alert-message');
+            if (alert) {
+                setTimeout(() => {
+                    alert.style.opacity = '1';
+                    alert.style.transform = 'translateX(0)';
+                }, 100);
 
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        var toastElList = [].slice.call(document.querySelectorAll('.toast'));
-        toastElList.forEach(function (toastEl) {
-            var toast = new bootstrap.Toast(toastEl);
-            toast.show();
+                setTimeout(() => {
+                    alert.style.opacity = '0';
+                    alert.style.transform = 'translateX(150%)';
+                    setTimeout(() => alert.remove(), 600);
+                }, 4000);
+            }
         });
-    });
-</script>
+    </script>
+@endif
 
-<style>
-.toast {
-    min-width: 260px;
-    border-radius: .75rem;
-    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
-    opacity: .95;
-}
-.toast-body {
-    font-weight: 500;
-    font-size: .9rem;
-}
-@media (max-width: 576px) {
-  .header_area .navbar-brand img {
-    height: 60px !important;
-  }
-  .header_area .nav-item {
-    width: 100%;
-    text-align: center;
-    margin: .5rem 0;
-  }
-  .header_area .menu_nav {
-    flex-direction: column;
-    align-items: center;
-  }
-  .search_input {
-    padding: .5rem;
-  }
-  .search_input .form-control {
-    width: 100%;
-  }
-  .toast-container {
-    right: 0;
-    left: 0;
-    top: 0;
-    padding: .5rem;
-    max-width: 100%;
-  }
-}
-</style>
-
-<style>
-/* Mobile‑only enhancements */
-@media (max-width: 576px) {
-    /* Header & navigation */
-    .header_area .navbar-brand img { height: 60px !important; }
-    .header_area .menu_nav { flex-direction: column; align-items: flex-start; }
-    .header_area .nav-item { width: 100%; padding: .6rem 0; text-align: left; margin: 0; }
-    .header_area .navbar-toggler { display: block; }
-    .header_area .search_input { padding: .5rem; }
-    .header_area .search_input .form-control { width: 100%; margin-bottom: .4rem; }
-
-    /* Typography */
-    body { font-size: 15px; line-height: 1.5; }
-    h1, .h1 { font-size: 2rem; }
-    h2, .h2 { font-size: 1.75rem; }
-    h3, .h3 { font-size: 1.5rem; }
-
-    /* Buttons & forms */
-    .btn, .primary-btn { min-height: 44px; width: 100%; padding: .75rem; font-size: 1rem; }
-    .form-control { width: 100%; padding: .65rem; font-size: 1rem; }
-    .form-group { margin-bottom: 1rem; }
-
-    /* Product pages */
-    .s_Product_carousel .single-prd-item img { width: 100%; height: auto; object-fit: contain; }
-    .s_product_text { padding: 1rem; }
-    .s_product_text h3 { margin-top: .5rem; font-size: 1.25rem; }
-    .s_product_text h2 { font-size: 1.5rem; }
-    .product_count { flex-direction: column; align-items: flex-start; gap: .4rem; }
-
-    /* Checkout page */
-    .checkout_area .order_box ul.list li a { font-size: .9rem; }
-    .checkout_area .payment_item label { padding: .6rem 0; }
-    .checkout_area .primary-btn { width: 100%; margin-top: 1rem; }
-    .checkout_area .payment-details { margin-top: 1rem; padding: .8rem; font-size: .95rem; }
-
-    /* Tables */
-    .table-responsive { overflow-x: auto; }
-
-    /* Toasts */
-    .toast-container { left: 0; right: 0; top: .5rem; padding: .5rem; max-width: 100%; }
-    .toast { width: 100%; min-width: auto; margin-bottom: .5rem; }
-
-    /* Footer */
-    .footer-area .single-footer-widget { text-align: center; margin-bottom: 1.5rem; }
-}
-</style>
